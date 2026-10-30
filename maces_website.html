@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>McGill Continuing Studies Student Association | MACES</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mcgill: {
+              red: '#ED1B2F',
+              darkred: '#C41224',
+              navy: '#111827',
+              gray: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .nav-btn.active {
+      background-color: #ED1B2F;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- TOP HEADER BANNER -->
+  <div class="bg-mcgill-navy text-white py-4 px-4 sm:px-8 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex items-center justify-center sm:justify-start gap-4 text-center sm:text-left">
+      <!-- Logo on Dark Background with White & Red Text -->
+      <div class="bg-slate-900 border border-slate-700 px-3.5 py-2 rounded-lg flex items-center justify-center shadow">
+        <span class="text-white font-black text-xl tracking-tight">I<span class="text-mcgill-red">M</span></span>
+        <span class="ml-1 text-white font-bold text-xs tracking-widest uppercase mt-0.5">MACES</span>
+      </div>
+      <div>
+        <h1 class="text-base sm:text-lg font-bold text-white tracking-wide uppercase leading-tight">
+          McGill Continuing studies student association
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR (Always visible, wrapping on smaller screens) -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm px-2 sm:px-6 py-2">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-start items-center gap-1 sm:gap-2">
+      <button onclick="goToPage('home')" class="nav-btn active px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="home">Home</button>
+      <button onclick="goToPage('about')" class="nav-btn px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="about">About us</button>
+      <button onclick="goToPage('health')" class="nav-btn px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="health">Health & dental plan</button>
+      <button onclick="goToPage('governance')" class="nav-btn px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="governance">Governance and opportunities</button>
+      <button onclick="goToPage('elections')" class="nav-btn px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="elections">Elections and referendum</button>
+      <button onclick="goToPage('building')" class="nav-btn px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="building">Building</button>
+      <button onclick="goToPage('calendar')" class="nav-btn px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="calendar">Calendar</button>
+      <button onclick="goToPage('contact')" class="nav-btn px-3 py-2 rounded-md transition text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100" data-nav="contact">Contact us</button>
+    </div>
+  </header>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
+
+    <!-- ==================== 1. HOME PAGE ==================== -->
+    <section id="page-home" class="page-section">
+      <!-- McGill University Picture Banner (Arts Building Entrance Vibe) -->
+      <div class="relative w-full h-72 sm:h-96 rounded-2xl overflow-hidden shadow border border-slate-200 mb-8 bg-slate-200">
+        <img 
+          src="arts_building_illuminated.jpg" 
+          alt="McGill University Arts Building" 
+          class="w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex items-end p-6 sm:p-8">
+          <div class="text-white max-w-2xl">
+            <span class="bg-mcgill-red text-white text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wider shadow">McGill University</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-white">School of Continuing Studies</h2>
+            <p class="text-sm sm:text-base text-slate-200 mt-2 font-medium">Representing students across Montreal since 1989</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Who we are & Social Media -->
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm mb-8 flex flex-col md:flex-row gap-8 justify-between">
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold text-slate-900 mb-3 text-mcgill-red">Who we are</h3>
+          <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+            MACES offers the students of the School of Continuing Studies academic support, extensive services, and assist them in enhancing and expanding their professional network. We provide a warm and relaxed space for exchange between students coming from diverse backgrounds to gather, connect and grow collectively.
+          </p>
+        </div>
+        
+        <div class="md:w-72 shrink-0 border-t md:border-t-0 md:border-l border-slate-200 pt-6 md:pt-0 md:pl-8 flex flex-col justify-center">
+          <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Connect With Us</h4>
+          <div class="space-y-4">
+            <a href="https://instagram.com/maces_mcgill" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-slate-600 hover:text-mcgill-red transition font-medium group">
+              <div class="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-red-50 flex items-center justify-center transition">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </div>
+              @maces_mcgill
+            </a>
+            <a href="https://facebook.com/macesmcgill" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-slate-600 hover:text-blue-600 transition font-medium group">
+              <div class="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-blue-50 flex items-center justify-center transition">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </div>
+              @macesmcgill
+            </a>
+            <a href="https://www.linkedin.com/company/mcgill-association-of-continuing-education-students" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition font-medium group">
+              <div class="w-10 h-10 rounded-xl bg-slate-100 group-hover:bg-blue-50 flex items-center justify-center transition">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </div>
+              MACES LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct section cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div onclick="goToPage('about')" class="p-5 bg-white border border-slate-200 rounded-xl hover:border-mcgill-red hover:shadow transition cursor-pointer">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-mcgill-red flex items-center justify-center mb-3">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-base">About us</h4>
+          <p class="text-xs text-slate-600 mt-1">Our history, mission, core values, executive team and staff.</p>
+        </div>
+
+        <div onclick="goToPage('health')" class="p-5 bg-white border border-slate-200 rounded-xl hover:border-mcgill-red hover:shadow transition cursor-pointer">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-mcgill-red flex items-center justify-center mb-3">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-base">Health & dental plan</h4>
+          <p class="text-xs text-slate-600 mt-1">Insurance group numbers, Alumo portal link, and coverage dates.</p>
+        </div>
+
+        <div onclick="goToPage('governance')" class="p-5 bg-white border border-slate-200 rounded-xl hover:border-mcgill-red hover:shadow transition cursor-pointer">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-mcgill-red flex items-center justify-center mb-3">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-base">Governance and opportunities</h4>
+          <p class="text-xs text-slate-600 mt-1">By-Laws, student governance, McGill committees and volunteering.</p>
+        </div>
+
+        <div onclick="goToPage('elections')" class="p-5 bg-white border border-slate-200 rounded-xl hover:border-mcgill-red hover:shadow transition cursor-pointer">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-mcgill-red flex items-center justify-center mb-3">
+            <i data-lucide="vote" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-base">Elections and referendum</h4>
+          <p class="text-xs text-slate-600 mt-1">How to run, voting procedures, and democratic referenda.</p>
+        </div>
+
+        <div onclick="goToPage('building')" class="p-5 bg-white border border-slate-200 rounded-xl hover:border-mcgill-red hover:shadow transition cursor-pointer">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-mcgill-red flex items-center justify-center mb-3">
+            <i data-lucide="building" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-base">Building</h4>
+          <p class="text-xs text-slate-600 mt-1">3437 Peel Street, floor guide, computer lab and quiet study spaces.</p>
+        </div>
+        
+        <div onclick="goToPage('calendar')" class="p-5 bg-white border border-slate-200 rounded-xl hover:border-mcgill-red hover:shadow transition cursor-pointer">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-mcgill-red flex items-center justify-center mb-3">
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-base">Calendar</h4>
+          <p class="text-xs text-slate-600 mt-1">Live schedule of upcoming MACES events and workshops.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT US ==================== -->
+    <section id="page-about" class="page-section hidden space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-bold text-slate-900">About us</h2>
+        <p class="text-sm text-slate-600">Learn about our history, mission, values, and team.</p>
+      </div>
+
+      <!-- History -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <h3 class="text-lg font-bold text-mcgill-red mb-3">History</h3>
+        <p class="text-slate-700 text-sm leading-relaxed mb-3">
+          MACES was founded in 1989 by a group of continuing education students who collectively wanted an association to represent them and the rest of the student body at the School of Continuing Studies and at the greater McGill community.
+        </p>
+        <p class="text-slate-700 text-sm leading-relaxed mb-3">
+          MACES delegates representatives to the Senate of McGill University and to various Committees where they advocate for the needs of Continuing Education students.
+        </p>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          MACES strives to represent McGill Continuing Education students whose common objective for enrolling in the school is to expand their horizons and strengthen their career paths with added learning and knowledge.
+        </p>
+      </div>
+
+      <!-- Mission & Values -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <h3 class="text-lg font-bold text-mcgill-red mb-2">Mission</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            To provide SCS students with a supportive network and community, while facilitating access to resources and activities that will promote students' well-being and help them achieve their goals.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <h3 class="text-lg font-bold text-mcgill-red mb-3">Values</h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mcgill-red"></i> Multicultural</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mcgill-red"></i> Accountable</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mcgill-red"></i> Community-oriented</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mcgill-red"></i> Ethical</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-mcgill-red"></i> Supportive</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Executive Team -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <h3 class="text-lg font-bold text-slate-900 mb-1">Executive Team</h3>
+        <p class="text-xs text-slate-500 mb-6">All VP + E-Mail + Photos</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- President -->
+          <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+            <div class="h-48 bg-slate-200">
+              <img src="Marween Bdriri president.jpg" alt="Marwen Bdiri" class="w-full h-full object-cover grayscale" />
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-bold text-mcgill-red uppercase">President</span>
+              <h4 class="text-base font-bold text-slate-900">Marwen Bdiri</h4>
+              <p class="text-xs text-slate-500 mt-2">Email: <a href="mailto:maces@mail.mcgill.ca" class="text-mcgill-red hover:underline">maces@mail.mcgill.ca</a></p>
+            </div>
+          </div>
+
+          <!-- VP Communications -->
+          <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+            <div class="h-48 bg-slate-200">
+              <img src="VP Communications Laury.jpg" alt="Laury-Layne Amanda Myrtild" class="w-full h-full object-cover grayscale" />
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-bold text-mcgill-red uppercase">VP Communications & external Affairs</span>
+              <h4 class="text-base font-bold text-slate-900">Laury-Layne Amanda Myrtild</h4>
+              <p class="text-xs text-slate-500 mt-2">Email: <a href="mailto:maces@mail.mcgill.ca" class="text-mcgill-red hover:underline">maces@mail.mcgill.ca</a></p>
+            </div>
+          </div>
+
+          <!-- VP Social -->
+          <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+            <div class="h-48 bg-slate-200">
+              <img src="Alonso-Vasconcelos VP Social.jpg" alt="Alonso Vasconcelos" class="w-full h-full object-cover grayscale" />
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-bold text-mcgill-red uppercase">VP Social</span>
+              <h4 class="text-base font-bold text-slate-900">Alonso Vasconcelos</h4>
+              <p class="text-xs text-slate-500 mt-2">Email: <a href="mailto:maces@mail.mcgill.ca" class="text-mcgill-red hover:underline">maces@mail.mcgill.ca</a></p>
+            </div>
+          </div>
+
+          <!-- VP Governor -->
+          <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+            <div class="h-48 bg-slate-200">
+              <img src="Amine Arezki VP Governor.png" alt="Amine Arezki" class="w-full h-full object-cover grayscale" />
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-bold text-mcgill-red uppercase">VP Governor</span>
+              <h4 class="text-base font-bold text-slate-900">Amine Arezki</h4>
+              <p class="text-xs text-slate-500 mt-2">Email: <a href="mailto:maces@mail.mcgill.ca" class="text-mcgill-red hover:underline">maces@mail.mcgill.ca</a></p>
+            </div>
+          </div>
+
+          <!-- VP Finance -->
+          <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+            <div class="h-48 bg-slate-200">
+              <img src="Mayssa VP Finance.jpg" alt="Mayssa Alkattan" class="w-full h-full object-cover grayscale" />
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-bold text-mcgill-red uppercase">VP Finance</span>
+              <h4 class="text-base font-bold text-slate-900">Mayssa Alkattan</h4>
+              <p class="text-xs text-slate-500 mt-2">Email: <a href="mailto:maces@mail.mcgill.ca" class="text-mcgill-red hover:underline">maces@mail.mcgill.ca</a></p>
+            </div>
+          </div>
+
+          <!-- VP Internal -->
+          <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+            <div class="h-48 bg-slate-100 flex items-center justify-center text-slate-400 text-xs font-semibold">
+              (picture upcoming)
+            </div>
+            <div class="p-4">
+              <span class="text-xs font-bold text-mcgill-red uppercase">VP Internal</span>
+              <h4 class="text-base font-bold text-slate-900">Nancy</h4>
+              <p class="text-xs text-slate-500 mt-2">Email: <a href="mailto:maces@mail.mcgill.ca" class="text-mcgill-red hover:underline">maces@mail.mcgill.ca</a></p>
+            </div>
+          </div>
+
+          <!-- VP Senator 1/Academic -->
+          <div class="border border-dashed border-slate-300 rounded-xl p-4 bg-slate-50 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-slate-400 uppercase">VP Senator 1/Academic</span>
+              <h4 class="text-base font-bold text-slate-700 mt-1">Vacant</h4>
+              <p class="text-xs text-slate-500 mt-1">No picture</p>
+            </div>
+            <button onclick="goToPage('elections')" class="text-xs font-bold text-mcgill-red hover:underline mt-4 text-left">
+              Run in elections &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Staff -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <h3 class="text-lg font-bold text-slate-900 mb-4">+ Staff</h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 border border-slate-200 rounded-xl bg-slate-50 flex items-center justify-between">
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Ke</h4>
+              <p class="text-xs text-slate-600">Board Secretary and building attendant</p>
+            </div>
+            <span class="text-xs text-slate-400">(picture upcoming)</span>
+          </div>
+
+          <div class="p-4 border border-slate-200 rounded-xl bg-slate-50 flex items-center justify-between">
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Amanda Chen</h4>
+              <p class="text-xs text-slate-600">Accountant</p>
+            </div>
+            <span class="text-xs text-slate-400">(picture upcoming)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. HEALTH & DENTAL PLAN ==================== -->
+    <section id="page-health" class="page-section hidden space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-bold text-slate-900">Health & Dental Plan</h2>
+        <p class="text-sm text-slate-600">Coverage details, group policy numbers, deadlines, and online claims portal.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <p class="text-slate-700 text-sm leading-relaxed mb-4">
+          As a result of a referendum conducted in March 2017, during which continuing education students voted in favor of introducing a student Health & Dental plan, MACES is implementing a comprehensive package of health and dental benefits available for its members to fill the gaps left by provincial or international health care coverages.
+        </p>
+        <p class="text-sm font-bold text-slate-800">
+          Link to the plan details: 
+          <a href="https://maces.alumo.ca/" target="_blank" rel="noopener noreferrer" class="text-mcgill-red underline">https://maces.alumo.ca/</a>
+        </p>
+      </div>
+
+      <!-- 4 Pillars -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <span class="text-xs font-bold text-slate-500 uppercase">HEALTH, DENTAL, VISION</span>
+          <h4 class="font-extrabold text-lg text-slate-900 mt-1">Health, Dental, Vision</h4>
+          <p class="text-xs font-bold text-mcgill-red mt-1">Group: Q1217</p>
+          <p class="text-xs text-slate-600 mt-2">Insured by Desjardins Insurance</p>
+        </div>
+
+        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <span class="text-xs font-bold text-slate-500 uppercase">TRAVEL</span>
+          <h4 class="font-extrabold text-lg text-slate-900 mt-1">Travel</h4>
+          <p class="text-xs font-bold text-mcgill-red mt-1">Group: 97180</p>
+          <p class="text-xs text-slate-600 mt-2">Insured by Securian Canada</p>
+        </div>
+
+        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <span class="text-xs font-bold text-slate-500 uppercase">VIRTUAL CARE</span>
+          <h4 class="font-extrabold text-lg text-slate-900 mt-1">Virtual Health Care</h4>
+          <p class="text-xs font-bold text-slate-800 mt-1">Dialogue</p>
+          <p class="text-xs text-slate-600 mt-2">Powered by Dialogue</p>
+        </div>
+
+        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <span class="text-xs font-bold text-slate-500 uppercase">LEGAL PROTECTION</span>
+          <h4 class="font-extrabold text-lg text-slate-900 mt-1">The Essentials</h4>
+          <p class="text-xs font-bold text-slate-800 mt-1">Consultation Service</p>
+          <p class="text-xs text-slate-600 mt-2">A legal consultation and representation service.</p>
+        </div>
+      </div>
+
+      <!-- KEY DATES & DEADLINES -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <h3 class="text-lg font-bold text-slate-900 mb-1">KEY DATES & DEADLINES</h3>
+        <p class="text-xs text-slate-600 mb-4">
+          Important dates: Find eligibility information for the Health & Dental Plan, other student services, and family enrolments.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm border-collapse">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs font-bold text-slate-600 uppercase">
+                <th class="py-2.5 px-3">Period</th>
+                <th class="py-2.5 px-3">Coverage Period</th>
+                <th class="py-2.5 px-3">Change-of-Coverage & Opt-Out</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
+              <tr>
+                <td class="py-3 px-3 font-bold text-slate-900">Fall</td>
+                <td class="py-3 px-3">September 1 - August 31</td>
+                <td class="py-3 px-3 text-mcgill-red font-semibold">August 12 September 28</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-bold text-slate-900">Winter</td>
+                <td class="py-3 px-3">January 1 - August 31</td>
+                <td class="py-3 px-3 text-mcgill-red font-semibold">December 9 - January 29</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Blackout Notice -->
+      <div class="bg-amber-50 border border-amber-200 p-5 rounded-2xl text-xs sm:text-sm text-amber-900 leading-relaxed">
+        <p class="mb-2">
+          Some students and dependants may experience a temporary coverage blackout while enrolment is processed, including late registrants and new individual or family enrolments. <strong>You're still covered.</strong> Keep your receipts and submit claims after the blackout ends: late October for Fall students and late February for Winter students. Questions? Contact us.
+        </p>
+        <p class="font-bold text-amber-950 mt-2">
+          Group Numbers: Health, Dental, and Vision - Q1217 (Insured by Desjardins Insurance) | Travel - 97180 (Insured by Securian Canada)
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 4. GOVERNANCE AND OPPORTUNITIES ==================== -->
+    <section id="page-governance" class="page-section hidden space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-bold text-slate-900">Governance and opportunities</h2>
+        <p class="text-sm text-slate-600">Constitutional By-Laws, elected Board, and university committee delegations.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+        <p class="text-slate-700 text-sm leading-relaxed">
+          • MACES is governed by it's ByLaws.<br />
+          • It's governed by the Board of Directors that is elected by the students.<br />
+          • We also offer job and volunteering opportunities for students.
+        </p>
+        <div class="pt-2">
+          <a href="#" onclick="alert('ByLaws PDF: Document loaded (March 2016 v1.2)'); return false;" class="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-900 text-white rounded-lg text-xs font-bold hover:bg-mcgill-red transition">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>Link to the ByLaws PDF documents</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Committee Representation -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <h3 class="text-base font-bold text-slate-900 mb-2">McGill University Committees</h3>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+          MACES sits on multiple committees that help make the student experience valuable and defend the MACES members' interests. The committee members for the academic year are:
+        </p>
+
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-800">
+          <li class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-mcgill-red"></i> Academic Policy Committee (APC)
+          </li>
+          <li class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-mcgill-red"></i> Equity, Diversity and Inclusion Committee (EDIC)
+          </li>
+          <li class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-mcgill-red"></i> Committee on Student Discipline
+          </li>
+          <li class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-mcgill-red"></i> Committee on the Rights of Senate
+          </li>
+          <li class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-mcgill-red"></i> Committee on Libraries
+          </li>
+          <li class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-mcgill-red"></i> Fee Advisory Committee of the School of Continuing Studies
+          </li>
+          <li class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-mcgill-red"></i> Committee on Student Enrollment
+          </li>
+        </ul>
+
+        <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span class="text-xs sm:text-sm font-semibold text-slate-700">If you want to volunteer, send us an email!</span>
+          <a href="mailto:maces@mail.mcgill.ca?subject=Volunteer%20Application" class="px-4 py-2 bg-mcgill-red text-white text-xs font-bold rounded-lg hover:bg-mcgill-darkred transition text-center">
+            Send Volunteer Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. ELECTIONS AND REFERENDUM ==================== -->
+    <section id="page-elections" class="page-section hidden space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-bold text-slate-900">Elections and referendum</h2>
+        <p class="text-sm text-slate-600">Elections mandate, how to run in 3 easy steps, voting procedure, and referendum details.</p>
+      </div>
+
+      <!-- MACES Elections Intro -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+        <h3 class="text-lg font-bold text-slate-900">MACES Elections</h3>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          MACES ELECTIONS has the main responsibility of running referenda and elections within MACES.
+        </p>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          MACES ELECTIONS is run autonomously from the MACES Board of Directors to avoid any conflicts of interest. Elections are held on a regular basis for positions on the MACES Executive Board of Directors.
+        </p>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          MACES ELECTIONS' mandate is to run accountable elections for members of MACES and to make sure that all students have an equal chance to vote, and that all candidates follow electoral procedures that are in place to ensure fair elections.
+        </p>
+        <p class="text-xs text-slate-500">
+          If you have any questions or comments, please don't hesitate to contact MACES ELECTIONS.
+        </p>
+      </div>
+
+      <!-- Why you should run -->
+      <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl shadow-sm">
+        <h3 class="text-lg font-bold text-white mb-2">Why you should run in the Elections?</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-3">
+          Become a student leader and join the dynamic and fun team of the MACES Executive Board of Directors! This is a unique opportunity to get more involved with university life and the McGill community and to put your professional skills to good use by improving the academic and social experience of everyone at the McGill School of Continuing Studies (SCS).
+        </p>
+        <p class="text-xs font-bold text-red-400 uppercase tracking-wider">
+          Plus, it makes a great addition to your CV!
+        </p>
+      </div>
+
+      <!-- How to Run (3 Steps) -->
+      <div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">How to Run</h3>
+        <p class="text-xs sm:text-sm text-slate-600 mb-6">
+          The nomination process involves 3 easy steps. To learn the details on how to run, who is eligible, and to see the list of all required documents, follow below.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Step 1 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-base mb-4">
+              1
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Get familiar with the elections process</h4>
+            <p class="text-xs text-slate-600 mb-3">Review the following documents:</p>
+            <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside">
+              <li>ELECTIONS GUIDELINES revised February 2023</li>
+              <li>MACES ELECTIONS - Roles and Responsibilites_2020 Revision</li>
+            </ul>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-base mb-4">
+              2
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Tell us about yourself</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Tell us why you should be elected, what makes you the ideal candidate, and what you want to do to make a difference for Continuing Studies students?
+            </p>
+            <p class="text-xs text-slate-700">
+              • Platform no more than 500 words<br />
+              • Clear headshot photo<br />
+              • Copy of your resume
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-base mb-4">
+              3
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Send your application</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Candidates interested in running in the elections must submit their online Nomination Form and upload the required documents by the application deadline (Wednesday, march 18th).
+            </p>
+            <p class="text-xs text-slate-700 font-medium">
+              To validate your candidacy, you will also need to ask 5 fellow students (currently enrolled in a program at SCS) to support your application.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidate Support Form Box -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="font-bold text-slate-900 text-base">Support a Candidate Running in the Elections</h4>
+          <p class="text-xs text-slate-600 mt-1">If you are a current student supporting a candidate's nomination please complete this online Candidate Support Form.</p>
+        </div>
+        <button onclick="openEndorseModal()" class="px-5 py-2.5 bg-mcgill-red text-white text-xs font-bold rounded-lg hover:bg-mcgill-darkred transition whitespace-nowrap">
+          Candidate Support Form
+        </button>
+      </div>
+
+      <!-- How to Vote -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+        <h4 class="font-bold text-slate-900 text-base mb-2">How to Vote</h4>
+        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+          Voting is done electronically through an external link during the voting period. All registered SCS students who pay the MACES fee are eligible to vote by using their student ID. Students get notified via email once the voting period is open (See above for dates). Voting is done in two easy steps and takes only 2 minutes.
+        </p>
+      </div>
+
+      <!-- Referenda Subsection -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-lg font-bold text-slate-900">MACES Referenda</h3>
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+          Referenda can be held once a semester, either early November or early March. It can be either student-initiated through a General Assembly or board-initiated. Questions must be prepared in advance, approved by the MACES Board and the McGill University Deputy Provost Office. For more information, please refer to the MACES By-Laws or contact us here.
+        </p>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-1">
+          <p><strong>Current referendum:</strong> None</p>
+          <p><strong>Past referendum:</strong> Winter 2025 (Results: Yes with a 54% Majority)</p>
+        </div>
+        <div class="text-xs text-slate-600 leading-relaxed border-l-2 border-mcgill-red pl-3 space-y-2">
+          <p class="font-bold text-slate-800">Text of the referendum (Winter 2025):</p>
+          <p>
+            The Winter 2025 Referendum is ongoing, and your vote matters! You're being asked to decide whether SCS students should continue benefiting from essential student services supported by MACES.
+          </p>
+          <p>
+            The referendum proposes an increase in the MACES membership fee, which has remained unchanged for over 20 years. To continue operating the MACES building, fairly compensate staff, and maintain the level of services, MACES is proposing a modest $1 per credit increase, raising the fee from $4.33 to $5.33 per credit for credit courses, and from $12.99 to $15.99 per course for non-credit courses, starting in Fall 2025.
+          </p>
+          <p class="font-semibold text-slate-800">Make your voice heard, vote by April 9 at 11:59 PM!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. BUILDING ==================== -->
+    <section id="page-building" class="page-section hidden space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-bold text-slate-900">Building</h2>
+        <p class="text-sm text-slate-600">The Red Door building at 3437 Peel Street.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+        <p class="text-slate-700 text-sm leading-relaxed">
+          MACES is located on an historical building in McGill Campus. You will recognize with it's red door at <strong>3437 Peel street</strong>.
+        </p>
+        <div class="p-4 rounded-xl bg-red-50 border border-red-200 text-xs sm:text-sm text-red-950 leading-relaxed">
+          Please bring your ID card to open the door with your ID card. If you don't have your ID card, make sure to be able to prove that you are student in order to have access to the building. You can call us during opening hours and someone will come open you the door.
+        </div>
+      </div>
+
+      <!-- Floor Directory Table / Cards -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div class="p-4 bg-slate-900 text-white font-bold text-sm">
+          Building Floor Directory
+        </div>
+        <div class="divide-y divide-slate-200 text-xs sm:text-sm">
+          
+          <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="max-w-xl">
+              <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-xs uppercase mb-1">Basement</span>
+              <h4 class="font-bold text-slate-900 text-base">Lounge Space</h4>
+              <p class="text-slate-600 mt-1">Sofa, fridge, tv. Mostly used during events, you can request to use at the reception.</p>
+            </div>
+            <span class="text-xs text-slate-400 italic shrink-0">Picture to be provided</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="max-w-xl">
+              <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-xs uppercase mb-1">First floor</span>
+              <h4 class="font-bold text-slate-900 text-base">Green International room</h4>
+              <p class="text-slate-600 mt-1">Free to use space for personal or team work. A few time during the academic years MACES organize events in this space.</p>
+            </div>
+            <span class="text-xs text-slate-400 italic shrink-0">Picture to be provided</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="max-w-xl">
+              <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-xs uppercase mb-1">Second floor</span>
+              <h4 class="font-bold text-slate-900 text-base">Computer Lab and reception</h4>
+              <p class="text-slate-600 mt-1">You will find a computer and the reception office with an attendant that can help and guide you. You can also request coffee pods to use with the Keurig machine that is free to use.</p>
+            </div>
+            <span class="text-xs text-slate-400 italic shrink-0">Picture to be provided</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="max-w-xl">
+              <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-xs uppercase mb-1">Third floor</span>
+              <h4 class="font-bold text-slate-900 text-base">Executive office</h4>
+              <p class="text-slate-600 mt-1">Only accessible to the board members and employees. This is where executives and the accountant have their official offices.</p>
+            </div>
+            <span class="text-xs text-slate-400 italic shrink-0">Picture to be provided</span>
+          </div>
+
+          <div class="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="max-w-xl">
+              <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-xs uppercase mb-1">Last floor</span>
+              <h4 class="font-bold text-slate-900 text-base">Meeting Room</h4>
+              <p class="text-slate-600 mt-1">Use a meeting room that can accommodate large meeting with a TV that can be connected to a computer.</p>
+            </div>
+            <span class="text-xs text-slate-400 italic shrink-0">Picture to be provided</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. CALENDAR ==================== -->
+    <section id="page-calendar" class="page-section hidden space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-bold text-slate-900">Calendar</h2>
+        <p class="text-sm text-slate-600">Live schedule of upcoming MACES events and workshops.</p>
+      </div>
+
+      <div class="bg-white p-2 sm:p-4 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="w-full overflow-hidden rounded-xl bg-slate-50">
+          <iframe 
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FToronto&title=MACES%20Events&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=0&src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%230B8043" 
+            style="border:solid 1px #e2e8f0; border-radius: 12px;" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            scrolling="no">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. CONTACT US ==================== -->
+    <section id="page-contact" class="page-section hidden space-y-8">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl font-bold text-slate-900">Contact us</h2>
+        <p class="text-sm text-slate-600">Please fill out the form bellow and we will get back to you as soon as we can!</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Form -->
+        <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name (required) *</label>
+              <input type="text" required placeholder="Name" class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-mcgill-red" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Email (required) *</label>
+              <input type="email" required placeholder="Email" class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-mcgill-red" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Message</label>
+              <textarea rows="4" placeholder="Your Message..." class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-mcgill-red"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 bg-mcgill-red hover:bg-mcgill-darkred text-white text-xs font-bold uppercase tracking-wider rounded-lg transition shadow">
+              Send Message
+            </button>
+          </form>
+
+          <div id="contactMsg" class="hidden mt-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-lg text-center font-medium">
+            Thank you! Your message has been sent.
+          </div>
+        </div>
+
+        <!-- Details & Map -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-xs sm:text-sm space-y-3">
+            <h4 class="text-base font-bold text-slate-900">Where We Are</h4>
+            <p class="text-slate-600">
+              You also can reach us at <a href="mailto:MACES@mail.mcgill.ca" class="text-mcgill-red font-semibold">MACES@mail.mcgill.ca</a> and also in person or by phone during our opening hours.
+            </p>
+            <div class="pt-2 border-t border-slate-100 space-y-1.5 text-slate-700">
+              <p><strong>Address:</strong> 3437 Peel Street, Montreal, Quebec H3A 1W7 Canada</p>
+              <p><strong>Study spaces & Computer Lab:</strong> Floors 1,2,4</p>
+              <p><strong>Office:</strong> Floor 3</p>
+              <p><strong>Computer Lab:</strong> 1 (514) 398-5474</p>
+              <p><strong>Executive office:</strong> 1 (514) 398-4974</p>
+              <p><strong>Email:</strong> <a href="mailto:maces@mail.mcgill.ca" class="text-mcgill-red font-semibold">maces@mail.mcgill.ca</a></p>
+            </div>
+          </div>
+
+          <!-- Google Map Embed -->
+          <div class="h-64 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.177242177309!2d-73.5822360233405!3d45.50247653063073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a41857c72f7%3A0xc3b8eb426e274b7!2s3437%20Rue%20Peel%2C%20Montr%C3%A9al%2C%20QC%20H3A%201W7!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIMPLE FOOTER -->
+  <footer class="bg-mcgill-navy text-slate-400 text-xs py-6 border-t border-slate-800 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div>
+        <span class="text-white font-bold">McGill Continuing studies student association (MACES)</span>
+        <p class="text-[11px] text-slate-400 mt-0.5">3437 Peel Street, Montreal, Quebec H3A 1W7 Canada</p>
+      </div>
+      <p>&copy; <span id="yearSpan"></span> MACES. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CANDIDATE SUPPORT FORM MODAL -->
+  <div id="endorseModal" class="fixed inset-0 z-50 bg-black/60 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl relative">
+      <button onclick="closeEndorseModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <h3 class="font-bold text-slate-900 text-base mb-1">Candidate Support Form</h3>
+      <p class="text-xs text-slate-600 mb-4">Complete this online form to support a fellow student's candidacy.</p>
+      <form onsubmit="handleEndorse(event)" class="space-y-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Your Full Name</label>
+          <input type="text" required placeholder="Name" class="w-full text-xs px-3 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-mcgill-red" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Candidate You Are Supporting</label>
+          <input type="text" required placeholder="Candidate name" class="w-full text-xs px-3 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-mcgill-red" />
+        </div>
+        <button type="submit" class="w-full py-2.5 bg-mcgill-red text-white text-xs font-bold rounded-lg hover:bg-mcgill-darkred transition mt-2">
+          Submit Support
+        </button>
+      </form>
+      <div id="endorseSuccess" class="hidden mt-3 p-2 bg-emerald-50 text-emerald-800 text-xs rounded text-center">
+        Thank you! Endorsement submitted.
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT FOR SWITCHING PAGES -->
+  <script>
+    // Lucide icons
+    lucide.createIcons();
+
+    // Copyright year
+    document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+    // Page switcher
+    function goToPage(pageId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.add('hidden'));
+
+      // Show selected section
+      const activeSec = document.getElementById(`page-${pageId}`);
+      if (activeSec) {
+        activeSec.classList.remove('hidden');
+      }
+
+      // Update Top Nav Buttons
+      const navBtns = document.querySelectorAll('.nav-btn');
+      navBtns.forEach(btn => {
+        if (btn.getAttribute('data-nav') === pageId) {
+          btn.classList.add('active');
+          btn.classList.remove('hover:bg-slate-100');
+        } else {
+          btn.classList.remove('active');
+          btn.classList.add('hover:bg-slate-100');
+        }
+      });
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Modal
+    function openEndorseModal() {
+      document.getElementById('endorseModal').classList.remove('hidden');
+      document.getElementById('endorseSuccess').classList.add('hidden');
+    }
+    function closeEndorseModal() {
+      document.getElementById('endorseModal').classList.add('hidden');
+    }
+    function handleEndorse(e) {
+      e.preventDefault();
+      document.getElementById('endorseSuccess').classList.remove('hidden');
+      setTimeout(closeEndorseModal, 2000);
+    }
+
+    // Contact form submit
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactMsg').classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => {
+        document.getElementById('contactMsg').classList.add('hidden');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
